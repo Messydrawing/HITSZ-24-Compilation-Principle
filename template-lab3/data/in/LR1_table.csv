@@ -1,0 +1,53 @@
+﻿状态,ACTION,,,,,,,,,,,,,,GOTO,,,,,
+,id,(,),+,-,*,/,&,=,int,return,IntConst,Semicolon,$,S_list,S,D,E,A,B
+0,shift 4,,,,,,,,,shift 5,shift 6,,,,1,2,3,,,
+1,,,,,,,,,,,,,,accept,,,,,,
+2,,,,,,,,,,,,,shift 7,,,,,,,
+3,shift 8,,,,,,,,,,,,,,,,,,,
+4,,,,,,,,,shift 9,,,,,,,,,,,
+5,reduce D -> int,,,,,,,,,,,,,,,,,,,
+6,shift 13,shift 14,,,shift 15,,,,,,,shift 16,,,,,,10,11,12
+7,shift 4,,,,,,,,,shift 5,shift 6,,,reduce S_list -> S Semicolon,17,2,3,,,
+8,,,,,,,,,,,,,reduce S -> D id,,,,,,,
+9,shift 13,shift 14,,,shift 15,,,,,,,shift 16,,,,,,18,11,12
+10,,,,shift 19,shift 20,,shift 21,shift 22,,,,,reduce S -> return E,,,,,,,
+11,,,,reduce E -> A,reduce E -> A,shift 23,reduce E -> A,reduce E -> A,,,,,reduce E -> A,,,,,,,
+12,,,,reduce A -> B,reduce A -> B,reduce A -> B,reduce A -> B,reduce A -> B,,,,,reduce A -> B,,,,,,,
+13,,,,reduce B -> id,reduce B -> id,reduce B -> id,reduce B -> id,reduce B -> id,,,,,reduce B -> id,,,,,,,
+14,shift 27,shift 28,,,shift 29,,,,,,,shift 30,,,,,,24,25,26
+15,shift 13,shift 14,,,shift 15,,,,,,,shift 16,,,,,,,,31
+16,,,,reduce B -> IntConst,reduce B -> IntConst,reduce B -> IntConst,reduce B -> IntConst,reduce B -> IntConst,,,,,reduce B -> IntConst,,,,,,,
+17,,,,,,,,,,,,,,reduce S_list -> S Semicolon S_list,,,,,,
+18,,,,shift 19,shift 20,,shift 21,shift 22,,,,,reduce S -> id = E,,,,,,,
+19,shift 13,shift 14,,,shift 15,,,,,,,shift 16,,,,,,,32,12
+20,shift 13,shift 14,,,shift 15,,,,,,,shift 16,,,,,,,33,12
+21,shift 13,shift 14,,,shift 15,,,,,,,shift 16,,,,,,,34,12
+22,shift 13,shift 14,,,shift 15,,,,,,,shift 16,,,,,,,35,12
+23,shift 13,shift 14,,,shift 15,,,,,,,shift 16,,,,,,,,36
+24,,,shift 37,shift 38,shift 39,,shift 40,shift 41,,,,,,,,,,,,
+25,,,reduce E -> A,reduce E -> A,reduce E -> A,shift 42,reduce E -> A,reduce E -> A,,,,,,,,,,,,
+26,,,reduce A -> B,reduce A -> B,reduce A -> B,reduce A -> B,reduce A -> B,reduce A -> B,,,,,,,,,,,,
+27,,,reduce B -> id,reduce B -> id,reduce B -> id,reduce B -> id,reduce B -> id,reduce B -> id,,,,,,,,,,,,
+28,shift 27,shift 28,,,shift 29,,,,,,,shift 30,,,,,,43,25,26
+29,shift 27,shift 28,,,shift 29,,,,,,,shift 30,,,,,,,,44
+30,,,reduce B -> IntConst,reduce B -> IntConst,reduce B -> IntConst,reduce B -> IntConst,reduce B -> IntConst,reduce B -> IntConst,,,,,,,,,,,,
+31,,,,reduce B -> - B,reduce B -> - B,reduce B -> - B,reduce B -> - B,reduce B -> - B,,,,,reduce B -> - B,,,,,,,
+32,,,,reduce E -> E + A,reduce E -> E + A,shift 23,reduce E -> E + A,reduce E -> E + A,,,,,reduce E -> E + A,,,,,,,
+33,,,,reduce E -> E - A,reduce E -> E - A,shift 23,reduce E -> E - A,reduce E -> E - A,,,,,reduce E -> E - A,,,,,,,
+34,,,,reduce E -> E / A,reduce E -> E / A,shift 23,reduce E -> E / A,reduce E -> E / A,,,,,reduce E -> E / A,,,,,,,
+35,,,,reduce E -> E & A,reduce E -> E & A,shift 23,reduce E -> E & A,reduce E -> E & A,,,,,reduce E -> E & A,,,,,,,
+36,,,,reduce A -> A * B,reduce A -> A * B,reduce A -> A * B,reduce A -> A * B,reduce A -> A * B,,,,,reduce A -> A * B,,,,,,,
+37,,,,reduce B -> ( E ),reduce B -> ( E ),reduce B -> ( E ),reduce B -> ( E ),reduce B -> ( E ),,,,,reduce B -> ( E ),,,,,,,
+38,shift 27,shift 28,,,shift 29,,,,,,,shift 30,,,,,,,45,26
+39,shift 27,shift 28,,,shift 29,,,,,,,shift 30,,,,,,,46,26
+40,shift 27,shift 28,,,shift 29,,,,,,,shift 30,,,,,,,47,26
+41,shift 27,shift 28,,,shift 29,,,,,,,shift 30,,,,,,,48,26
+42,shift 27,shift 28,,,shift 29,,,,,,,shift 30,,,,,,,,49
+43,,,shift 50,shift 38,shift 39,,shift 40,shift 41,,,,,,,,,,,,
+44,,,reduce B -> - B,reduce B -> - B,reduce B -> - B,reduce B -> - B,reduce B -> - B,reduce B -> - B,,,,,,,,,,,,
+45,,,reduce E -> E + A,reduce E -> E + A,reduce E -> E + A,shift 42,reduce E -> E + A,reduce E -> E + A,,,,,,,,,,,,
+46,,,reduce E -> E - A,reduce E -> E - A,reduce E -> E - A,shift 42,reduce E -> E - A,reduce E -> E - A,,,,,,,,,,,,
+47,,,reduce E -> E / A,reduce E -> E / A,reduce E -> E / A,shift 42,reduce E -> E / A,reduce E -> E / A,,,,,,,,,,,,
+48,,,reduce E -> E & A,reduce E -> E & A,reduce E -> E & A,shift 42,reduce E -> E & A,reduce E -> E & A,,,,,,,,,,,,
+49,,,reduce A -> A * B,reduce A -> A * B,reduce A -> A * B,reduce A -> A * B,reduce A -> A * B,reduce A -> A * B,,,,,,,,,,,,
+50,,,reduce B -> ( E ),reduce B -> ( E ),reduce B -> ( E ),reduce B -> ( E ),reduce B -> ( E ),reduce B -> ( E ),,,,,,,,,,,,
