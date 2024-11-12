@@ -1,0 +1,22 @@
+//这是一个小型pascal文法
+
+[nonterminal]
+	subprogram_declarations subprogram_declaration
+	subprogram_head arguments parameter_list
+	optional_statements statement_list statement
+[terminal]
+	begin end function procedure
+[production]
+	subprogram_declarations => subprogram_declarations
+							   subprogram_declaration semi | ;
+	subprogram_declaration => subprogram_head
+							  declarations
+							  compound_statement ;
+	subprogram_head => function id arguments : standard_type semi |
+					   procedure id arguments semi ;
+	arguments => ( parameter_list ) | ;
+	parameter_list => identifier_list : type |
+					  parameter_list semi identifier_list : type ;
+	compound_statement => begin optional_statements end ;
+	optional_statements => statement_list | ;
+	statement_list => statement | statement_list semi statement ;

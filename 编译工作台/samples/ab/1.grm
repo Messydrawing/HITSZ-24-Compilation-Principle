@@ -1,0 +1,12 @@
+//这个文法描述一个aa*bb*的串
+
+[nonterminal]
+	A B
+[terminal]
+	a b
+[start]
+	S
+[production]
+	S => A;
+	A => a A | b B;
+	B => b B | ;

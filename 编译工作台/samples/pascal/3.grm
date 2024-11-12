@@ -1,0 +1,30 @@
+//这是一个小型pascal文法
+
+[nonterminal]
+	statement
+	procedure_statement
+	compound_statement
+ 	variable expression
+	expression_list
+	simple_expression
+	term factor sign
+[terminal]
+	if then else while do
+	assignop relop addop mulop
+	num not + -
+[production]
+	statement => variable assignop expression |
+				 procedure_statement |
+				 compound_statement |
+				 if expression then statement else statement |
+				 while expression do statement ;
+	variable => id | id [ expression ] ;
+	procedure_statement => id | id ( expression_list ) ;
+	expression_list => expression | expression_list , expression ;
+	expression => simple_expression |
+				  simple_expression relop simple_expression ;
+	simple_expression => term | sign term |
+						 simple_expression addop term ;
+	term => factor | term mulop factor ;
+	factor => id | id ( expression_list ) | num | ( expression ) | not factor ;
+	sign => + | - ;

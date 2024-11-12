@@ -1,0 +1,24 @@
+//这是一个小型pascal文法
+
+[nonterminal]
+	program subprogram_declarations
+	identifier_list declarations compound_statement
+	declaration type standard_type
+[terminal]
+	prog id ( ) semi , var : digits .. of
+	array integer real [ ]
+[start]
+	program'
+[production]
+	program' => program ;
+	program => prog id ( identifier_list ) semi
+			   declarations
+			   subprogram_declarations
+			   compound_statement ;
+	identifier_list => id | identifier_list , id ;
+	declarations => var declaration semi | ;
+	declaration => declaration semi identifier_list : type |
+				   identifier_list : type ;
+	type => standard_type |
+			array [ digits .. digits ] of standard_type ;
+	standard_type => integer | real ;

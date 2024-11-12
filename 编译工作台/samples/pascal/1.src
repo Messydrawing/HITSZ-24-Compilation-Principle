@@ -1,0 +1,36 @@
+//这是一个pascal源文件
+
+prog id ( id , id ) semi
+var
+	id , id : array [ digits .. digits ] of integer semi
+	id : real semi
+
+function id ( id , id : array [ digits .. digits ] of real semi id : integer ) : real semi
+begin
+	id assignop num
+end semi
+
+procedure id semi
+begin
+	if id relop id then
+	begin
+		while id relop id do
+		begin
+			id ( id , id , id ) semi
+			id assignop id mulop num
+		end
+	end
+	else
+		id ( id , id , id )
+end semi
+
+begin
+	id assignop ( id addop id ) mulop id addop id semi
+	id ( id , id ) semi
+	if id relop id then id ( id , id ) else id ( id , id ) semi
+	while id relop id do
+	begin
+		id assignop id semi
+		id ( id )
+	end
+end
